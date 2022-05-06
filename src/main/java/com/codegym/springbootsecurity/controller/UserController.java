@@ -17,14 +17,14 @@ public class UserController {
 
     @GetMapping("/user")
     public ModelAndView user(Principal principal) {
-        // Get authenticated user name from Principal
+        // Get authenticated username from Principal
         System.out.println(principal.getName());
         return new ModelAndView("/user");
     }
 
     @GetMapping("/admin")
     public ModelAndView admin() {
-        // Get authenticated user name from SecurityContext
+        // Get authenticated username from SecurityContext
         SecurityContext context = SecurityContextHolder.getContext();
         System.out.println(context.getAuthentication().getName());
         return new ModelAndView("/admin");
